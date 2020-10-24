@@ -4,15 +4,24 @@ import Background from './../../assets/img/bg-01.jpg'
 class Login extends React.Component {
     constructor() {
         super()
-        this.state = { value: '' };
+        this.state = { 
+            userNameValue: '',
+            passValue:''
+         };
 
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeUserName = this.handleChangeUserName.bind(this);
+        this.handleChangePassword = this.handleChangePassword.bind(this);
       
     }
-    handleChange(event) {
+    handleChangeUserName(event) {
         
-        this.setState({ value: event.target.value });
-        console.log(this.state.value)
+        this.setState({ userNameValue: event.target.value });
+        console.log(this.state.userNameValue)
+    }
+    handleChangePassword(event) {
+        
+        this.setState({ passValue: event.target.value });
+        console.log(this.state.passValue)
     }
     render() {
         return (
@@ -28,12 +37,12 @@ class Login extends React.Component {
 				</span>
 
                                 <div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
-                                <input class="input100" type="text" name="username" placeholder="username or email" value={this.state.value} onChange={this.handleChange} />
+                                <input class="input100" type="text" name="username" placeholder="username or email" value={this.state.userNameValue} onChange={this.handleChangeUserName} />
                                         <span class="focus-input100"></span>
 				</div>
 
                                     <div class="wrap-input100 validate-input m-b-25" data-validate="Enter password">
-                                        <input class="input100" type="password" name="pass" placeholder="password"/>
+                                <input class="input100" type="password" name="pass" placeholder="password" value={this.state.passValue} onChange={this.handleChangePassword} />
                                             <span class="focus-input100"></span>
 				</div>
 

@@ -1,94 +1,168 @@
 import React from 'react'
 import User from './../../assets/img/user.png'
 class Users extends React.Component {
+    // state={
+
+    //     users:[]
+
+    // }
+    state = {
+        users: []
+
+    }
     constructor() {
         super()
+
+        // this.
+    }
+    intilizeUser=()=>{
+        this.setState({users:[
+            {
+                firstName: 'jhon',
+                lastName: 'doe',
+                userName: '@jhondoe',
+                country: 'iran'
+            }, {
+                firstName: 'jhon',
+                lastName: 'doe',
+                userName: '@jhondoe',
+                country: 'iran'
+            }, {
+                firstName: 'jhon',
+                lastName: 'doe',
+                userName: '@jhondoe',
+                country: 'iran'
+            }, {
+                firstName: 'jhon',
+                lastName: 'doe',
+                userName: '@jhondoe',
+                country: 'iran'
+            }, {
+                firstName: 'jhon',
+                lastName: 'doe',
+                userName: '@jhondoe',
+                country: 'iran'
+            },
+        ]})
+    }
+    addUser=()=>{
+        // const userArrays = this.state.users;
+
+        // userArrays.push({
+        //     firstName: 'jdfghnjmon',
+        //     lastName: 'dcvbnoe',
+        //     userName: '@jhsdfgondoe',
+        //     country: 'irdcfvgbhnjkan'
+        // });
+        // this.setState(prevState => ({
+        //     users: [...prevState.users, userArrays]
+        // }))
+        var joined = this.state.users.concat({
+            firstName: 'jdfghnjmon',
+            lastName: 'dcvbnoe',
+            userName: '@jhsdfgondoe',
+            country: 'irdcfvgbhnjkan'
+        }
+        );
+        this.setState({ users: joined })
+        // this.setState({
+        //     users: [...this.state.users, {
+        //         firstName: 'jdfghnjmon',
+        //         lastName: 'dcvbnoe',
+        //         userName: '@jhsdfgondoe',
+        //         country: 'irdcfvgbhnjkan'
+        //     }],
+        // });
+        // const userArrays = [...this.state.users];
+        // userArrays.push({
+        //     firstName: 'jhon',
+        //     lastName: 'doe',
+        //     userName: '@jhondoe',
+        //     country: 'iran'
+        // });
+        // this.setState({ userArrays });
+    }
+
+    componentDidMount(){
+        this.intilizeUser();
     }
     render() {
         return (
-            <div class="container-fluid">
+            <div className="container-fluid">
 
-                <div class="card-layout mar-top-15 mar-bottom-15">
-                    <div class="card-body text-center">
-                        <h5 class="card-title m-b-0">Users</h5>
+                <div className="card-layout mar-top-15 mar-bottom-15">
+                    <div className="card-body text-center">
+                        <h5 className="card-title m-b-0">Users</h5>
                     </div>
                 </div>
 
-                <div class="card-layout mar-top-15 mar-bottom-15 pad-15">
+                <div className="card-layout mar-top-15 mar-bottom-15 pad-15">
                     <form>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="form-group">
+                        <div className="row">
+                            <div className="col-sm-3">
+                                <div className="form-group">
 
-                                    <label for="exampleInputEmail1">First Name</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                                    <label htmlFor="exampleInputEmail1">First Name</label>
+                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Last Name</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                            <div className="col-sm-3">
+                                <div className="form-group">
+                                    <label htmlFor="exampleInputPassword1">Last Name</label>
+                                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                                 </div>
                                 </div>
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">UserName</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                            <div className="col-sm-3">
+                                <div className="form-group">
+                                    <label htmlFor="exampleInputPassword1">UserName</label>
+                                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Country</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                            <div className="col-sm-3">
+                                <div className="form-group">
+                                    <label htmlFor="exampleInputPassword1">Country</label>
+                                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                                 </div>
                             </div>
                            
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button"  className="btn btn-primary" onClick={()=>this.addUser()}>Submit</button>
                         
                                   
                         </form>
                     </div>
  
-            <div class="card-layout">
+            <div className="card-layout">
              
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="card">
                                
-                                <div class="table-responsive table-radius">
-                                    <table class="table">
-                                          <thead class="thead-light">
+                                <div className="table-responsive table-radius">
+                                    <table className="table">
+                                          <thead className="thead-light">
                                             <tr>
-                                                <th>  <span class="">index</span> </th>
+                                                <th>  <span className="">index</span> </th>
                                                     <th scope="col">First Name</th>
                                                     <th scope="col">Last Name</th>
                                                     <th scope="col">UserName</th>
                                                     <th scope="col">Country</th>
                                             </tr>
                                           </thead>
-                                            <tbody class="customtable">
-                                                <tr>
-                                                <td>1</td>
-                                                        <td>India</td>
-                                                        <td>Chrome OS</td>
-                                                        <td>MAC OS</td>
-                                                        <td>76</td>
-                            </tr>
-                                                    <tr>
-                                                <td>1</td>
-                                                            <td>USA</td>
-                                                            <td>Internet Explorer</td>
-                                                            <td>Win 2010</td>
-                                                            <td>10</td>
-                            </tr>
-                                                        <tr>
-                                                <td>1</td>
-                                                                <td>UK</td>
-                                                                <td>Safari</td>
-                                                                <td>Mac OS</td>
-                                                                <td>16</td>
-                            </tr>
+                                            <tbody className="customtable">
+                                            {this.state.users.map((user, index) => (
+                                                <tr key={index}>
+
+                                                    <td>{index+1}</td>
+                                                    <td>{user.firstName}</td>
+                                            <td>{user.lastName}</td>
+                                                    <td>{user.userName}</td>
+                                                    <td>{user.country}</td>
+                                                </tr>
+                                            ))}
+                                            
+                                                 
+                                           
                                                                 
                                                          
                         </tbody>
